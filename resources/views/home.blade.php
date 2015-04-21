@@ -5,7 +5,7 @@
 
 <div class="hero" ng-controller="SlideshowController">
 
-	<div class="pauser" ng-mouseenter="pause(false)" ng-mouseleave="next(); play()"></div>
+	<div class="pauser" ng-mouseenter="pause(false)" ng-mouseleave="play()"></div>
 
 	<i class="fa fa-pause pause-icon slide-animation" ng-show="paused"></i>
 
