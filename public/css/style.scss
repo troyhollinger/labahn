@@ -1,0 +1,725 @@
+@import 'bourbon/_bourbon.scss';
+
+// Variables
+// $teal : #65ffd5;
+$teal : #66ffcc;
+$light : #e6e6e6;
+$gotham : 'Gotham', sans-serif;
+$georgia : 'Georgia', serif;
+$small-margin : 25px;
+$medium-margin : 45px;
+$large-margin: 60px;
+
+
+//Mixins
+@mixin center {
+	position: absolute;
+	top:50%;
+	left:50%;
+	@include transform(translate(-50%,-50%));
+}
+
+@mixin stretch {
+	width:100%;
+	height:100%;
+}
+
+@mixin centerLeft {
+	position: absolute;
+	top:50%;
+	left:0;
+	@include transform(translate(0%,-50%));
+}
+
+@mixin centerRight {
+	position: absolute;
+	top:50%;
+	right:0;
+	@include transform(translate(0%,-50%));
+}
+
+@mixin centerHorizontal {
+	position: absolute;
+	left:50%;
+	@include transform(translate(-50%, 0%));
+}
+
+@mixin centerVertical {
+	position: relative;
+	top:50%;
+	@include transform(translateY(-50%));
+}
+
+@mixin triangle($direction, $color) {
+	//for the longer border length, add the two shorter together
+	// and find 86.66% of that sum, and use it.
+
+	border-style: solid;
+	@if $direction == left {
+		border-width: 18px 31.2px 18px 0;
+		border-color: transparent $color transparent transparent;
+	}
+	@else if $direction == right {
+		border-width: 18px 0 18px 31.2px;
+		border-color: transparent transparent transparent $color;
+	}
+	
+}
+
+@mixin breakpoint($point) {
+	@if $point == small {
+    	@media (max-width: 600px) { @content; }
+	}
+	@else if $point == medium {
+    	@media (max-width: 1000px) { @content; }
+	}
+	@else {
+		@media (max-width: $point) { @content; }
+	}
+  
+}
+
+
+@mixin stretchpoint($point) {
+	@if $point == small {
+    	@media (min-width: 600px) { @content; }
+	}
+	@else if $point == medium {
+    	@media (min-width: 1000px) { @content; }
+	}
+	@else if $point == large {
+
+		@media (min-width:1400px) { @content; }
+
+	}
+	@else {
+		@media (min-width: $point) { @content; }
+	}
+  
+}
+
+@mixin change {
+	@include transition(all .15s ease);
+}
+
+
+html {
+
+	font-family: $gotham;
+
+
+}
+
+a {
+
+	color:inherit;
+
+}
+
+.georgia {
+
+	font-family: $georgia;
+
+}
+
+.bigger {
+
+	font-size: 1.2em;
+
+}
+
+.bold {
+
+	font-weight: bold;
+
+}
+
+.clear {
+
+	clear:both;
+
+}
+
+.hidden {
+
+	opacity: 0 !important;
+	pointer-events:none !important;
+
+}
+
+.hamburger {
+
+	position: fixed;
+	top:$small-margin;
+	left:$small-margin;
+	width:40px;
+	height:33px;
+	z-index: 10;
+	cursor: pointer;
+
+	.patty {
+
+		width:100%;
+		height:7px;
+		background-color: white;
+		@include transition(all .15s ease);
+
+		&:first-child {
+			position: absolute;
+			top:0;
+			left:0;
+		}
+
+		&:nth-child(2) {
+			@include center;
+			top:49.25%;
+		}
+
+		&:last-child {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+
+	}	
+
+	&.open {
+
+		.patty {
+
+			background-color: black;
+
+			&:first-child {
+
+				@include transform(translate(0, 13px) rotate(45deg));
+				
+
+			}
+
+			&:nth-child(2) {
+
+				opacity: 0;
+
+			}
+
+			&:last-child {
+
+				@include transform(translate(0, -13px) rotate(-45deg));
+
+			}
+
+		}
+
+	}
+
+	@include stretchpoint(medium) {
+
+		top:$medium-margin;
+		left:$medium-margin;
+
+	}
+
+	@include stretchpoint(large) {
+
+		top:$large-margin;
+		left:$large-margin;
+
+	}
+
+}
+
+.navigation {
+
+	position: fixed;
+	width:75%;
+	width:75vw;
+	height:100%;
+	height:100vh;
+	background-color: white;
+	z-index: 9;
+	@include transform(translate(-100%, 0%));
+	@include transition(all .25s ease);
+
+	ul {
+
+		margin-top: 120px;
+
+	}
+
+	li {
+
+		font-size: 1.4rem;
+		box-sizing:border-box;
+		padding:10px 0 10px 20px;
+		cursor: pointer;
+
+		&:hover {
+
+			background-color: $light;
+
+		}
+
+		&.active {
+
+			background-color: $teal;
+
+		}
+
+	}
+
+	&.open {
+
+		@include transform(translate(0%, 0%));
+
+	}
+
+	@include stretchpoint(small) {
+
+		width:250px;
+
+	}
+
+}
+
+
+
+.hero {
+
+	position: relative;
+	z-index: 5;
+	width:100%;
+	width:100vw;
+	height:100%;
+	height:100vh;
+	background-color: $teal;
+	overflow: hidden;
+
+}
+
+.slide {
+
+	position: absolute;
+	width:100%;
+	width:100vw;
+	height:100%;
+	height:100vh;
+	background-color: $teal;
+	@include transform(translate(0%, 0%));
+	@include transition(all .3s ease);
+	opacity: 1;
+
+	&.ng-hide {
+
+		@include transform(translate(0%, -8%));
+		opacity: 0;
+
+	}
+
+	&.ng-hide-remove {
+
+		
+		@include transform(translate(0%, 8%));
+		opacity: 0;
+
+	}
+
+		
+}
+
+.slide-content {
+
+	@include center;
+	width:100%;
+	height:auto;
+	text-align: center;
+	box-sizing:border-box;
+	padding:0 25px;
+
+	h1 {
+
+		font-weight: bold;
+		font-size: 1.7rem;
+		text-transform: uppercase;
+
+		@include stretchpoint(small) {
+
+			font-size: 2.2rem;
+			letter-spacing: -1px;
+
+		}
+
+		@include stretchpoint(large) {
+
+			font-size: 3.5rem;
+			line-height: 1;
+
+		}
+
+	}
+
+	h2 {
+
+		margin:15px 0;
+		font-size: .975rem;
+
+		@include stretchpoint(small) {
+
+			font-size: 1.1rem;
+
+		}
+
+		@include stretchpoint(large) {
+
+			width:70%;
+			margin:20px auto;
+			font-size: 1.3rem;
+
+		}
+
+	}
+
+	h3 {
+
+		font-weight: bold;
+		text-transform: uppercase;
+		font-size: .6rem;
+
+		@include stretchpoint(small) {
+
+			font-size: .8rem;
+
+		}
+
+	}
+
+	@include stretchpoint(small) {
+
+		width:80%;
+
+	}
+
+	@include stretchpoint(medium) {
+
+		width:60%;
+
+	}
+
+	@include stretchpoint(large) {
+
+		width:55%;
+
+	}
+
+}
+
+
+.slide-indicator {
+
+	display: inline-block;
+	position: absolute;
+	bottom:15px;
+	left:50%;
+	@include transform(translate(-50%,-50%));
+	color:white;
+	font-size: 1.1rem;
+
+	i {
+
+		margin:0 5px;
+		font-size: 1.1em;
+		cursor: pointer;
+
+	}
+
+	@include stretchpoint(large) {
+
+		bottom:35px;
+		font-size: 1.3rem;
+
+	}
+
+}
+
+
+.footer {
+
+	position: fixed;
+	z-index: 4;
+	bottom:0;
+	height:auto;
+	width:100%;
+	
+}
+
+.mobile-footer-content {
+
+	width:100%;
+	background-color: white;
+	padding:$small-margin;
+	box-sizing:border-box;
+
+	ul {
+
+		margin-bottom: 25px;
+
+	}
+
+	li {
+
+		font-size: 1.2rem;
+		color:darken($light, 30%);
+		box-sizing:border-box;
+		padding:5px 0;
+		cursor: pointer;
+
+	}
+
+	@include stretchpoint(medium) {
+
+		display: none;
+		// padding:$medium-margin;
+
+	}
+
+
+}
+
+.desktop-footer-content {
+
+	position: relative;
+	width:100%;
+	box-sizing:border-box;
+	padding:$small-margin 0;
+	display: none;
+
+	ul {
+
+		float:left;
+
+		li {
+
+			position: relative;
+			float: left;
+			margin-right: 15px;
+			color:darken($light, 30%);
+			font-size: .9rem;
+			cursor: pointer;
+
+			&:last-child {
+
+				margin-right: 0;
+
+			}
+
+			&:hover {
+
+				text-decoration: underline;
+
+			}
+
+			@include stretchpoint(medium) {
+
+				margin-right: 20px;
+
+			}
+
+			@include stretchpoint(large) {
+
+				margin-right: 25px;
+
+			}
+
+		}
+
+	}
+
+	.copyrights {
+
+		float:right;
+		font-size: .75rem;
+
+		@include stretchpoint(large) {
+
+			font-size: .9rem;
+
+		}
+
+	}
+
+	@include stretchpoint(medium) {
+
+		display: block;
+
+	}
+
+	@include stretchpoint(medium) {
+
+		padding:$medium-margin 0;
+
+	}
+
+	@include stretchpoint(large) {
+
+		padding:$large-margin 0;
+
+	}
+
+}
+
+.coming-soon {
+
+	&:after {
+
+		content:"Coming soon...";
+		position: absolute;
+		bottom:100%;
+		left:0;
+		white-space: nowrap;
+		font-size: .7rem;
+		opacity: 0;
+
+	}
+
+	&:hover {
+
+		&:after {
+
+			opacity: 1;
+
+		}
+
+	}
+
+}
+
+.desktop-footer-text {
+
+	box-sizing:border-box;
+	padding:0 $small-margin;
+	margin-top: 20px;
+
+	@include stretchpoint(medium) {
+
+		padding:0 $medium-margin;
+
+	}
+
+	@include stretchpoint(large) {
+
+		padding:0 $large-margin;
+
+	}
+
+}
+
+.desktop-logo {
+
+	float:right;
+	width:200px;
+	margin-top:15px;
+
+	@include stretchpoint(large) {
+
+		width:350px;
+
+	}
+
+}
+
+.copyrights {
+
+	font-size: .7rem;
+	color:darken($light, 30%);
+
+}
+
+.mobile-logo {
+
+
+	width:100%;
+	margin-bottom: 20px;
+	margin-top: 5px;
+	max-width: 480px;
+
+}
+
+
+
+.credits {
+
+	position: absolute;
+	right:$large-margin;
+	top:81%;
+	text-transform: uppercase;
+	font-size: .6rem;
+	color:darken($light, 30%);
+	display: none;
+
+	@include stretchpoint(small) {
+
+		display: block;
+
+	}
+
+}
+
+
+
+
+
+.pauser {
+
+	@include center;
+	width:200px;
+	height:200px;
+	background-color: transparent;
+	cursor: pointer;
+	z-index: 9;
+
+}
+
+.pause-icon {
+
+	@include center;
+	top:80%;
+	color:white;
+	font-size: 3.3rem;
+	z-index: 9;
+
+}
+
+
+
+
+.slide-animation {
+
+	
+	@include transition(all .2s ease);
+	opacity: 1;
+
+	&.ng-hide {
+		
+		opacity: 0;
+
+	}
+
+	&.ng-hide-remove {
+
+		opacity: 0;
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
