@@ -4,7 +4,7 @@
 // $teal : #65ffd5;
 $teal : #66ffcc;
 $light : #e6e6e6;
-$gotham : 'Gotham', sans-serif;
+$gotham : 'Gotham SSm A', 'Gotham SSm B', 'Gotham', sans-serif;
 $georgia : 'Georgia', serif;
 $small-margin : 25px;
 $medium-margin : 45px;
@@ -407,6 +407,7 @@ a {
 	@include stretchpoint(large) {
 
 		width:55%;
+		top:40%;
 
 	}
 
@@ -675,6 +676,12 @@ a {
 	background-color: transparent;
 	cursor: pointer;
 	z-index: 9;
+
+	@include stretchpoint(large) {
+
+		top:40%;
+
+	}
 
 }
 
