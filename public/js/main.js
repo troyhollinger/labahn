@@ -1,5 +1,22 @@
 var app = angular.module('labahn', ['ngAnimate']);
 
+function scrollUp() {
+
+	// window.scrollTo(0,0);
+	if (document.body.scrollTop!=0 || document.documentElement.scrollTop!=0) {
+
+	    window.scrollBy(0,-50);
+
+	    timeOut = setTimeout('scrollUp()',10);
+
+  	} else {
+
+	  	clearTimeout(timeOut);
+
+	}
+
+}
+
 app.factory('NavigationService', ['$rootScope', function($rootScope) {
 
 	var NavigationService = {};
@@ -129,6 +146,7 @@ app.controller('NavigationController', ['$scope', function($scope) {
 	$scope.$on('open', function() {
 
 		$scope.open = true;
+		scrollUp();
 
 	});
 
