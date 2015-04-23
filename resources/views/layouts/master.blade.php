@@ -38,7 +38,7 @@
                 <li class="disabled">Have Mike Speak</li>
                 <li><a href="https://twitter.com/themikelabahn" target="_blank">Mike Tweets</a></li>
                 <li><a href="https://www.facebook.com/themikelabahn" target="_blank">And Facebooks</a></li>
-                <li><a href="mailto:emailme@mikelabahn.com">Email Mike</a></li>
+                <li><a href="mailto:author@mikelabahn.com">Email Mike</a></li>
 
             </ul>
 
@@ -76,7 +76,7 @@
                         <li class="coming-soon">Have Mike Speak</li>
                         <li><a href="https://twitter.com/themikelabahn" target="_blank">Mike Tweets</a></li>
                         <li><a href="https://www.facebook.com/themikelabahn" target="_blank">And Facebooks</a></li>
-                        <li><a href="mailto:emailme@mikelabahn.com">Email Mike</a></li>
+                        <li><a href="mailto:author@mikelabahn.com">Email Mike</a></li>
                     </ul>
 
                     <span class="copyrights">&copy; 2015 MikeLabahn - All Rights Reserved</span>

@@ -351,6 +351,7 @@ a {
 		font-weight: bold;
 		font-size: 1.7rem;
 		text-transform: uppercase;
+		font-weight: 800;
 
 		@include stretchpoint(small) {
 
@@ -363,6 +364,7 @@ a {
 
 			font-size: 3.5rem;
 			line-height: 1;
+			letter-spacing: -5px;
 
 		}
 
@@ -382,8 +384,8 @@ a {
 		@include stretchpoint(large) {
 
 			width:70%;
-			margin:20px auto;
-			font-size: 1.3rem;
+			margin:25px auto 20px auto;
+			font-size: 1.4rem;
 
 		}
 
@@ -666,6 +668,12 @@ a {
 	font-size: .6rem;
 	color:darken($light, 30%);
 	display: none;
+
+	&:hover {
+
+		text-decoration: underline;
+
+	}
 
 	@include stretchpoint(small) {
 
