@@ -36,10 +36,10 @@
                 <li class="disabled">Buy Books</li>
                 <li class="disabled">Meet Mike</li>
                 <li class="disabled">Have Mike Speak</li>
-                <li><a href="http://medium.com/@mikelabahn">Read on Medium</a></li>
                 <li><a href="https://twitter.com/themikelabahn" target="_blank">Mike Tweets</a></li>
                 <li><a href="https://www.facebook.com/themikelabahn" target="_blank">And Facebooks</a></li>
                 <li><a href="mailto:author@mikelabahn.com">Email Mike</a></li>
+                <li><a href="http://medium.com/@mikelabahn">Read on Medium</a></li>
 
             </ul>
 
@@ -75,10 +75,10 @@
                         <li class="coming-soon">Buy Books</li>
                         <li class="coming-soon">Meet Mike</li>
                         <li class="coming-soon">Have Mike Speak</li>
-                        <li><a href="http://medium.com/@mikelabahn">Read Medium</a></li>
-                        <li><a href="https://twitter.com/themikelabahn" target="_blank">Mike Tweets</a></li>
-                        <li><a href="https://www.facebook.com/themikelabahn" target="_blank">And Facebooks</a></li>
-                        <li><a href="mailto:author@mikelabahn.com">Email Mike</a></li>
+                        <li><a href="http://medium.com/@mikelabahn">Medium</a></li>
+                        <li><a href="https://twitter.com/themikelabahn" target="_blank">Twitter</a></li>
+                        <li><a href="https://www.facebook.com/themikelabahn" target="_blank">Facebook</a></li>
+                        <li><a href="mailto:author@mikelabahn.com">Email</a></li>
                     </ul>
 
                     <span class="copyrights">&copy; 2015 MikeLabahn - All Rights Reserved</span>
