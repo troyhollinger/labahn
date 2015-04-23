@@ -80,7 +80,7 @@
 			</div>
 		</div>
 
-		<div class="slide-indicator"><i class="fa fa-long-arrow-left" ng-click="previous()" ng-class="{ 'hidden' : slide[0] == true }" ng-mouseenter="pause(true)" ng-mouseleave="play()"></i> <span class="bold">0@{{ slide.indexOf(true) + 1 }}</span> / 0@{{ slide.length }} <i class="fa fa-long-arrow-right" ng-click="next()" ng-mouseenter="pause(true)" ng-mouseleave="play()" ng-class="{ 'hidden' : slide[slide.length - 1] == true }"></i></div>
+		<div class="slide-indicator"><i class="fa fa-long-arrow-left hidden" ng-click=""></i> <span class="bold">0@{{ slide.indexOf(true) + 1 }}</span> / 0@{{ slide.length }} <i class="fa fa-long-arrow-right" ng-click="next()" ng-mouseenter="pause(true)" ng-mouseleave="play()"></i></div>
 
 		<img class="portrait" src="{{ asset('img/mike.png') }}">
 
