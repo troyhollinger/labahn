@@ -253,7 +253,7 @@ a {
 		padding:10px 0 10px 20px;
 		cursor: pointer;
 
-		&:hover {
+		&:not(.disabled):not(.active):hover {
 
 			background-color: $light;
 
@@ -304,13 +304,14 @@ a {
 	height:100%;
 	height:100vh;
 	background-color: $teal;
-	@include transform(translate(0%, 0%));
+	@include transform(translate3d(0%, 0%, 0) scale(1));
 	@include transition(all .3s ease);
 	opacity: 1;
 
 	&.ng-hide {
 
-		@include transform(translate(0%, -8%));
+		@include transform(translate3d(0%, 0%, 40px) scale(1.2));
+		// @include transform(translate(0%, -8%));
 		opacity: 0;
 
 	}
@@ -318,7 +319,7 @@ a {
 	&.ng-hide-remove {
 
 		
-		@include transform(translate(0%, 8%));
+		@include transform(translate3d(0%, 0%, 0) scale(0.8));
 		opacity: 0;
 
 	}
@@ -576,7 +577,7 @@ a {
 		bottom:100%;
 		left:0;
 		white-space: nowrap;
-		font-size: .7rem;
+		font-size: .9rem;
 		opacity: 0;
 
 	}

@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Mike Labahn</title>
+        <title>Mike Labahn | San Diego Christian Author and Speaker</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7040154/612346/css/fonts.css" />
@@ -33,12 +33,12 @@
             <ul>
 
                 <li class="active">Home Sweet</li>
-                <li>Buy Books</li>
-                <li>Meet Mike</li>
-                <li>Have Mike Speak</li>
-                <li>Mike Tweets</li>
-                <li>And Facebooks</li>
-                <li>Email Mike</li>
+                <li class="disabled">Buy Books</li>
+                <li class="disabled">Meet Mike</li>
+                <li class="disabled">Have Mike Speak</li>
+                <li><a href="https://twitter.com/themikelabahn" target="_blank">Mike Tweets</a></li>
+                <li><a href="https://www.facebook.com/themikelabahn" target="_blank">And Facebooks</a></li>
+                <li><a href="mailto:emailme@mikelabahn.com">Email Mike</a></li>
 
             </ul>
 
