@@ -366,6 +366,7 @@ a {
 .slide-content {
 
 	@include center;
+	top:40%;
 	width:100%;
 	height:auto;
 	text-align: center;
@@ -434,21 +435,21 @@ a {
 	@include stretchpoint(small) {
 
 		width:80%;
-		top:40%;
+		
 
 	}
 
 	@include stretchpoint(medium) {
 
 		width:60%;
-		top:40%;
+		
 
 	}
 
 	@include stretchpoint(large) {
 
 		width:55%;
-		top:40%;
+	
 
 	}
 
