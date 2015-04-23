@@ -67,7 +67,7 @@
 		<div class="slide" ng-show="slide[6]">
 			<div class="slide-content">
 				<h1><span class="georgia">&ldquo;</span>...Sitting in a taco shop, I wrote on a paper napkin a single sentence that would change the course of our lives...<span class="georgia">&rdquo;</span></h1>
-				<h2></h2>
+				<h2>&nbsp;</h2>
 				<h3>Labahn Life Story by Mike Labahn - Expected fall 2015</h3>
 			</div>
 		</div>
@@ -83,7 +83,7 @@
 		<div class="slide-indicator"><i class="fa fa-long-arrow-left" ng-click="previous()" ng-class="{ 'hidden' : slide[0] == true }" ng-mouseenter="pause(true)" ng-mouseleave="play()"></i> <span class="bold">0@{{ slide.indexOf(true) + 1 }}</span> / 0@{{ slide.length }} <i class="fa fa-long-arrow-right" ng-click="next()" ng-mouseenter="pause(true)" ng-mouseleave="play()" ng-class="{ 'hidden' : slide[slide.length - 1] == true }"></i></div>
 
 		<img class="portrait" src="{{ asset('img/mike.png') }}">
-		
+
 	</div>
 
 </div>
