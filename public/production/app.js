@@ -72,6 +72,8 @@ app.controller('SlideshowController', ['$scope', '$interval', function($scope, $
 
 	$scope.interval = null;
 
+	$scope.autoPlay = true;
+
 	$scope.slide = [
 
 		true,
@@ -126,6 +128,8 @@ app.controller('SlideshowController', ['$scope', '$interval', function($scope, $
 	$scope.play = function() {
 
 		if ( angular.isDefined(interval) ) return;
+
+		if ($scope.autoPlay === false) return;
 
 		interval = $interval(function() {
 

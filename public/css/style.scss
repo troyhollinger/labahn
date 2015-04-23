@@ -286,7 +286,7 @@ a {
 .hero {
 
 	position: relative;
-	z-index: 5;
+	// z-index: 5;
 	width:100%;
 	width:100vw;
 	height:100%;
@@ -314,33 +314,62 @@ a {
 	height:100%;
 	height:100vh;
 	background-color: $teal;
-	@include transform(translate(0%, 0%));
-	@include transition(all .5s ease);
+	@include transform(translate3d(0%, 0%, 0));
+	
 	opacity: 1;
 
-	&.ng-hide {
+	// &.ng-hide {
 
-		@include transform(translate(75%, 0%));
-		// @include transform(translate(0%, -8%));
-		opacity: 0;
+	// 	@include transform(translate3d(75%, 0%, 0));
+	// 	// @include transform(translate(0%, -8%));
+	// 	opacity: 0;
+
+	// }
+
+	// &.ng-hide-remove {
+
+		
+	// 	@include transform(translate3d(-75%, 0%, 0));
+	// 	opacity: 0;
+
+	// }
+
+	&.ng-hide-add, &.ng-hide-remove {
+
+		@include transition(all 0s linear);
+
+	}
+
+	&.ng-hide-add-active, &.ng-hide-remove-active {
+
+		@include transition(all .5s ease);
+
+	}
+
+	&.ng-hide-add.ng-hide-add-active {
+
+		@include transform(translate3d(-100%, 0%, 0));
 
 	}
 
 	&.ng-hide-remove {
 
-		
-		@include transform(translate(-75%, 0%));
-		opacity: 0;
+		@include transform(translate3d(100%, 0%, 0));
+
+	}
+	
+	&.ng-hide-remove.ng-hide-remove-active {
+
+		@include transform(translate3d(0%, 0%, 0));
 
 	}
 
-	// &.ng-hide-add {
+	// &.ng-hide {
 
-	// 	@include transform(translate(75%, 0%));
+	// 	@include transform(translate3d(-75%, 0%, 0));
 	// 	opacity: 0;
 
 	// }
-
 		
 }
 
@@ -464,9 +493,9 @@ a {
 
 .footer {
 
-	position: fixed;
-	z-index: 4;
-	bottom:0;
+	// position: fixed;
+	// z-index: ;
+	// bottom:0;
 	height:auto;
 	width:100%;
 	
@@ -512,6 +541,7 @@ a {
 	box-sizing:border-box;
 	padding:$small-margin 0;
 	display: none;
+	background-color: white;
 
 	ul {
 
@@ -722,27 +752,6 @@ a {
 }
 
 
-
-
-.slide-animation {
-
-	
-	@include transition(all .2s ease);
-	opacity: 1;
-
-	&.ng-hide {
-		
-		opacity: 0;
-
-	}
-
-	&.ng-hide-remove {
-
-		opacity: 0;
-
-	}
-
-}
 
 
 .portrait {
