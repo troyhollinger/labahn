@@ -62,7 +62,7 @@ app.factory('NavigationService', ['$rootScope', function($rootScope) {
 
 }]);
 
-app.controller('SlideshowController', ['$scope', '$interval', function($scope, $interval) {
+app.controller('SlideshowController', ['$scope', '$interval', 'NavigationService', function($scope, $interval, NavigationService) {
 
 	var interval;
 
@@ -160,6 +160,12 @@ app.controller('SlideshowController', ['$scope', '$interval', function($scope, $
 
 	}
 
+	$scope.closeMenu = function() {
+
+		NavigationService.close();
+
+	}
+
 	$scope.play();
 
 
@@ -204,9 +210,21 @@ app.controller('HamburgerController', ['$scope', 'NavigationService', function($
 
 		}
 
-		$scope.open = !$scope.open;
+		// $scope.open = !$scope.open;
 
 	}
+
+	$scope.$on('open', function() {
+
+		$scope.open = true;
+
+	});
+
+	$scope.$on('close', function() {
+
+		$scope.open = false;
+
+	});
 
 
 

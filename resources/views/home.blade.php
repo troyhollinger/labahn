@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class="hero" ng-controller="SlideshowController">
+<div class="hero" ng-controller="SlideshowController" ng-click="closeMenu()">
 
 	<div class="hero-fixed-container">
 
