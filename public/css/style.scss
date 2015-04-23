@@ -303,10 +303,10 @@ a {
 
 	@include stretchpoint(large) {
 
-		position: fixed;
-		top:0;
-		left:0;
-		
+		// position: fixed;
+		// top:0;
+		// left:0;
+
 	}
 	
 
@@ -324,21 +324,6 @@ a {
 	
 	opacity: 1;
 
-	// &.ng-hide {
-
-	// 	@include transform(translate3d(75%, 0%, 0));
-	// 	// @include transform(translate(0%, -8%));
-	// 	opacity: 0;
-
-	// }
-
-	// &.ng-hide-remove {
-
-		
-	// 	@include transform(translate3d(-75%, 0%, 0));
-	// 	opacity: 0;
-
-	// }
 
 	&.ng-hide-add, &.ng-hide-remove {
 
@@ -370,12 +355,11 @@ a {
 
 	}
 
-	// &.ng-hide {
+	@include stretchpoint(large) {
 
-	// 	@include transform(translate3d(-75%, 0%, 0));
-	// 	opacity: 0;
+		position: fixed;
 
-	// }
+	}
 		
 }
 
@@ -450,12 +434,14 @@ a {
 	@include stretchpoint(small) {
 
 		width:80%;
+		top:40%;
 
 	}
 
 	@include stretchpoint(medium) {
 
 		width:60%;
+		top:40%;
 
 	}
 
@@ -473,7 +459,7 @@ a {
 
 	display: inline-block;
 	position: absolute;
-	bottom:15px;
+	bottom:55px;
 	left:50%;
 	@include transform(translate(-50%,-50%));
 	color:white;
@@ -772,6 +758,12 @@ a {
 	@include stretchpoint(medium) {
 
 		display: block;
+
+	}
+
+	@include stretchpoint(large) {
+
+		position: fixed;
 
 	}
 
